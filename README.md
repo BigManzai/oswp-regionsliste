@@ -12,3 +12,10 @@ Dort folgende Datenbank Einträge laut eurer OpenSim Konfiguration anpassen:
       $CONF_db_user  = "databaseuser";       	             // login
       $CONF_db_pass    = "password";     	     // password
       $CONF_db_database   = "opensimdatabasename"; // Name of BDD
+
+
+TODO: 
+
+Einstellungen über Wordpress funktionieren nicht.
+
+Automatischer Link muss noch rein.
