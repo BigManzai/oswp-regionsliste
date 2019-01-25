@@ -30,7 +30,7 @@
    {
       echo "<tr>";
       echo "<td>$lf</td>";
-      echo "<td>" . " "  . $dsatz["regionName"] . "</td>";
+      echo "<td>" . ". "  . $dsatz["regionName"] . "</td>";
       echo "</tr>";
       $lf = $lf + 1;
    }
