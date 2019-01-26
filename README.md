@@ -8,7 +8,7 @@ Diese Plugin Reihe ist dafür gedacht den OpenSimulator mit Wordpress zu kombini
 
 Plugin Widgets stehen nach dem aktivieren im Plugin Bereich  unter „Design“ „Widgets“ zur Verfügung.
 
-## Setup
+### Setup
 
 Die Plugins haben noch keine echte einstellmöglichkeit, sobald ich begriffen habe wie das geht werde ich diese hinzufügen.
 
