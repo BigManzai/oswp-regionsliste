@@ -8,7 +8,7 @@ Diese Plugin Reihe ist dafür gedacht den OpenSimulator mit Wordpress zu kombini
 
 Plugin Widgets stehen nach dem aktivieren im Plugin Bereich  unter „Design“ „Widgets“ zur Verfügung.
 
-= Setup =
+## Setup
 
 Die Plugins haben noch keine echte einstellmöglichkeit, sobald ich begriffen habe wie das geht werde ich diese hinzufügen.
 
@@ -31,7 +31,7 @@ Dort folgende Datenbank Einträge laut eurer OpenSim Konfiguration anpassen:
       $CONF_db_database   = "opensimdatabasename"; // Name of BDD
 
 
-TODO: 
+## TODO: 
 
 Einstellungen über Wordpress funktionieren nicht.
 
