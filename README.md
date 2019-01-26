@@ -31,7 +31,7 @@ Dort folgende Datenbank Einträge laut eurer OpenSim Konfiguration anpassen:
       $CONF_db_database   = "opensimdatabasename"; // Name of BDD
 
 
-## TODO: 
+### TODO: 
 
 Einstellungen über Wordpress funktionieren nicht.
 
