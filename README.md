@@ -2,6 +2,8 @@
 
 Das Plugin ist noch nicht fertig, es funktioniert aber schon.
 
+Dies Plugin liest eure Datenbank aus und listet alle sich darauf befindlichen Regionen auf.
+
 Oswp was bedeutet das? OpenSimulator Wordpress um es kurz zu sagen.
 
 Diese Plugin Reihe ist dafür gedacht den OpenSimulator mit Wordpress zu kombinieren, zu erweitern oder zu ergänzen.
