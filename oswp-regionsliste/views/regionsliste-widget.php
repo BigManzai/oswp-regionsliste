@@ -2,12 +2,13 @@
 
 <?php
 // Konfig Anfang
-  /* MySQL Database */
-  $CONF_db_server   = "localhost";		     //Your Database-Server
-  $CONF_db_user  = "databaseuser";       	             // login
-  $CONF_db_pass    = "password";     	     // password
-  $CONF_db_database   = "opensimdatabasename"; // Name of BDD
+/* MySQL Database */
+$CONF_db_server   = "localhost";		     //Your Database-Server
+$CONF_db_user  = "databaseuser";       	             // login
+$CONF_db_pass    = "password";     	     // password
+$CONF_db_database   = "opensimdatabasename"; // Name of BDD
 // Konfig Ende
+
   
   $dbort = $CONF_db_server;
   $dbuser = $CONF_db_user;
@@ -34,6 +35,7 @@
       echo "</tr>";
       $lf = $lf + 1;
    }
+   
 
    // Tabellenende
    echo "</table>";
