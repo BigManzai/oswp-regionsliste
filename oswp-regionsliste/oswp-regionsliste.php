@@ -13,7 +13,7 @@
  * @wordpress-plugin
  * Plugin Name:       oswp-regionsliste
  * Plugin URI:        https://github.com/BigManzai/oswp-regionsliste
- * Description:       Das OpenSim Plugin zeigt eine Regionsliste an.
+ * Description:       Das OpenSim Plugin/Widget zeigt die aktuelle Regionsliste an. Bitte im Widget Bereich aktivieren und die MySQL Daten der Datenbank eingeben.
  * Version:           1.0.1
  * Author:            Manfred Aabye
  * Author URI:        http://openmanniland.de
