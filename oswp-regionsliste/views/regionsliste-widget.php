@@ -6,7 +6,7 @@
 	//$wpdb->show_errors();
 	
 	// Tabellenname erstellen
-	$tablename = $wpdb->prefix . "opensim";
+	$tablename = $wpdb->prefix . "osregionlist";
 	
 	// Auslesen der wp datenbank
 	$CONF_db_server = $wpdb->get_var( "SELECT CONF_db_server FROM $tablename" );

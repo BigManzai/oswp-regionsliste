@@ -68,7 +68,7 @@
 		//$wpdb->show_errors();
 		
 		// Tabellen Name
-		$tablename = $wpdb->prefix . "opensim";
+		$tablename = $wpdb->prefix . "osregionlist";
 		
 		//Tabelle erstellen
 		$charset_collate = $wpdb->get_charset_collate();
