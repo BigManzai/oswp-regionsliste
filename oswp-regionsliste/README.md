@@ -1,6 +1,14 @@
-Das Plugin ist noch nicht ganz fertig.
+# oswp-regionsliste
+listet alle Regionen nach Eintrag auf.
 
+Dieses Plugin stellt euch ein Widget zur Verfügung.
+
+Das Widget fügt sich nahtlos in euer WP Theme ein, ihr könnt auch euer Theme nachträglich wechseln.
+
+# Installation
 Entpacken und das Verzeichnis oswp-regionsliste in euer /wp-content/plugins kopieren.
+
+(Nicht das Verzeichnis oswp-regionsliste-master)
 
 Das Plugin im Plugins Bereich von Wordpress Aktivieren.
 
