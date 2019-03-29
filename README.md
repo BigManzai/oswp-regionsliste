@@ -1,6 +1,6 @@
 # oswp-regionsliste
 
-Das Plugin ist noch nicht fertig, es funktioniert aber schon.
+Das Plugin ist noch nicht ganz fertig, es funktioniert aber schon.
 
 Dies Plugin liest eure Datenbank aus und listet alle sich darauf befindlichen Regionen auf.
 
@@ -10,31 +10,23 @@ Diese Plugin Reihe ist dafür gedacht den OpenSimulator mit Wordpress zu kombini
 
 Plugin Widgets stehen nach dem aktivieren im Plugin Bereich  unter „Design“ „Widgets“ zur Verfügung.
 
-### Setup
+### Installation
 
-Die Plugins haben noch keine echte einstellmöglichkeit, sobald ich begriffen habe wie das geht werde ich diese hinzufügen.
+Entpacken und das Verzeichnis oswp-regionsliste in euer /wp-content/plugins kopieren.
 
-Unter „Plugins“ „Editor“ können die Plugins geändert werden.
+Das Plugin im Plugins Bereich von Wordpress Aktivieren.
 
-Hierzu muss erst rechts das „zu bearbeitende Plugin“ ausgewählt werden.
+Jetzt im Theme Bereich Widgets das Plugin dort hineinschieben wo ihr es hin haben wollt.
 
-Unter „Plugin Dateien“ das Widget Plugin auswählen und die Zeile „// Konfig Anfang“ suchen.
+Anschließend noch die MySQL Server Daten eures OpenSim eintragen und speichern anklicken.
 
-Hier die Daten die in der Robust.ini oder in der GridCommon.ini stehen eintragen.
+Jetzt habt ihr alle eure Regionen dort stehen wo ihr das Widget hineingeschoben habt.
 
-„localhost“ kann meist nur geändert werden wenn man auf dem Zielserver Externen mySQL zugriff erlaubt.
-
-Dort folgende Datenbank Einträge laut eurer OpenSim Konfiguration anpassen:
-
-      /* MySQL Database */
-      $CONF_db_server   = "localhost";		     //Your Database-Server
-      $CONF_db_user  = "databaseuser";       	             // login
-      $CONF_db_pass    = "password";     	     // password
-      $CONF_db_database   = "opensimdatabasename"; // Name of BDD
+Durch verschieben des Widget ändert ihr die Anzeigeposition.
 
 
 ### TODO: 
 
-Einstellungen über Wordpress funktionieren nicht.
-
 Automatischer Link muss noch rein.
+
+Wenn Eintrag vorhanden überschreiben.
