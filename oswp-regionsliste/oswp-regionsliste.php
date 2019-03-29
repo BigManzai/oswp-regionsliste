@@ -14,7 +14,7 @@
  * Plugin Name:       oswp-regionsliste
  * Plugin URI:        https://github.com/BigManzai/oswp-regionsliste
  * Description:       Das OpenSim Plugin zeigt eine Regionsliste an.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Manfred Aabye
  * Author URI:        http://openmanniland.de
  * Text Domain:       oswp-regionsliste
