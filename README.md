@@ -25,4 +25,3 @@ Durch verschieben des Widget ändert ihr die Anzeigeposition.
 
 ### TODO: 
 
-Automatischer Link muss noch rein.
