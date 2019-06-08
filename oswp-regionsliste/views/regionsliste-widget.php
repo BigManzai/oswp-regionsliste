@@ -9,6 +9,7 @@
 	$tablename = $wpdb->prefix . "osregionlist";
 	
 	// Auslesen der wp datenbank
+	$CONF_os_name = $wpdb->get_var( "SELECT CONF_os_name FROM $tablename" );
 	$CONF_db_server = $wpdb->get_var( "SELECT CONF_db_server FROM $tablename" );
 	$CONF_db_user = $wpdb->get_var( "SELECT CONF_db_user FROM $tablename" );
 	$CONF_db_pass = $wpdb->get_var( "SELECT CONF_db_pass FROM $tablename" );
@@ -18,7 +19,7 @@
 	$res = mysqli_query($con, "SELECT * FROM regions");
 	
    // Überschrift
-   echo "<h2>Regionsliste</h2>";
+   echo "<h1>$CONF_os_name</h1>";
 	
    // Tabellenbeginn
    echo "<table border='0' style='border-collapse:collapse'>";

@@ -3,6 +3,13 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Ab hier die Ausgabe im Control-Fenster des Adminbereiches -->
+
+<?php
+// Gettext einfügen
+/* Make theme available for translation */
+	load_plugin_textdomain( 'oswp-regionsliste', false, basename( dirname( __FILE__ ) ) . '/lang' );
+ ?>
+
 <?php if (!isset($_POST['oskonfig'])): ?>
 
 <!-- Start Abfrage Nutzer -->
@@ -14,35 +21,35 @@
 	<div class="w3-row w3-section">
 
 
-    <p><label for="base" class="w3-label control-label"><i class="fa fa-pencil" style="font-size:24px"></i>  OpenSim Name:</b></label></p>
+    <p><label for="base" class="w3-label control-label"><i class="fa fa-pencil" style="font-size:24px"></i><?php echo esc_html__( '  OpenSim Name:', 'oswp-regionsliste' ) ; ?></b></label></p>
         <div class="w3-row">
             <p><input class="w3-input w3-border" type="text" placeholder="My OpenSim" name="CONF_os_name"/></p>
         </div>
     </div>
 	
 	<div class="w3-row w3-section">	
-    <p><label for="base" class="w3-label control-label"><i class="fa fa-pencil" style="font-size:24px"></i>  MySQL Server IP:</b></label></p>
+    <p><label for="base" class="w3-label control-label"><i class="fa fa-pencil" style="font-size:24px"></i><?php echo esc_html__( '  MySQL Server IP:', 'oswp-regionsliste' ) ; ?></b></label></p>
         <div class="w3-row">
             <p><input class="w3-input w3-border" type="text" placeholder="127.0.0.1" name="CONF_db_server"/></p>
         </div>
     </div>
  
 	<div class="w3-row w3-section">
-    <p><label for="base" class="w3-label control-label"><i class="fa fa-pencil" style="font-size:24px"></i>  MySQL Database:</b></label></p>
+    <p><label for="base" class="w3-label control-label"><i class="fa fa-pencil" style="font-size:24px"></i><?php echo esc_html__( '  MySQL Database:', 'oswp-regionsliste' ) ; ?></b></label></p>
         <div class="w3-row">
             <p><input class="w3-input w3-border" type="text" placeholder="opensim" name="CONF_db_database"/></p>
         </div>
     </div>
 
  	<div class="w3-row w3-section">
-    <p><label for="base" class="w3-label control-label"><i class="fa fa-pencil" style="font-size:24px"></i>  MySQL User:</b></label></p>
+    <p><label for="base" class="w3-label control-label"><i class="fa fa-pencil" style="font-size:24px"></i><?php echo esc_html__( '  MySQL User:', 'oswp-regionsliste' ) ; ?></b></label></p>
         <div class="w3-row">
             <p><input class="w3-input w3-border" type="text" placeholder="opensim" name="CONF_db_user"/></p>
         </div>
     </div>
 	
  	<div class="w3-row w3-section">
-    <p><label for="base" class="w3-label control-label"><i class="fa fa-pencil" style="font-size:24px"></i>  Password:</b></label></p>
+    <p><label for="base" class="w3-label control-label"><i class="fa fa-pencil" style="font-size:24px"></i><?php echo esc_html__( '  Password:', 'oswp-regionsliste' ) ; ?></b></label></p>
         <div class="w3-row">
             <p><input class="w3-input w3-border" type="password" placeholder="password" name="CONF_db_pass"/></p>
         </div>
@@ -72,9 +79,10 @@
 		
 		//Tabelle erstellen
 		$charset_collate = $wpdb->get_charset_collate();
-
+		
+		// Neue Tabelleneinträge eintragen NEU: os_id mediumint (9) NOT NULL,
 		$sql = "CREATE TABLE $tablename (
-		  os_id mediumint (9) NOT NULL AUTO_INCREMENT,
+		  os_id mediumint (9) NOT NULL,
 		  CONF_os_name text NOT NULL,
 		  CONF_db_server text NOT NULL,
 		  CONF_db_user text NOT NULL,
@@ -85,7 +93,9 @@
 
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $sql );
-		// OK bis hier her geht es
+
+		// NEU: Erst Tabellen löschen dann schreiben os_id nicht vergessen.
+		$wpdb->delete( $tablename, array( 'os_id' => 0 ) );
 		
 		// Eigentliche Daten speichern
 		$sql2 = $wpdb->prepare("INSERT INTO $tablename (CONF_os_name, CONF_db_server, CONF_db_user, CONF_db_pass, CONF_db_database) values (%s, %s, %s, %s, %s)", $CONF_os_name, $CONF_db_server, $CONF_db_user, $CONF_db_pass, $CONF_db_database);
