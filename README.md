@@ -1,7 +1,5 @@
 # oswp-regionsliste
 
-Das Plugin ist noch nicht ganz fertig, es funktioniert aber schon.
-
 Dies Plugin liest eure Datenbank aus und listet alle sich darauf befindlichen Regionen auf.
 
 Oswp was bedeutet das? OpenSimulator Wordpress um es kurz zu sagen.
@@ -28,5 +26,3 @@ Durch verschieben des Widget ändert ihr die Anzeigeposition.
 ### TODO: 
 
 Automatischer Link muss noch rein.
-
-Wenn Eintrag vorhanden überschreiben.
