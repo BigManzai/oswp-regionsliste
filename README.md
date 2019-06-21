@@ -22,6 +22,18 @@ Jetzt habt ihr alle eure Regionen dort stehen wo ihr das Widget hineingeschoben 
 
 Durch verschieben des Widget ändert ihr die Anzeigeposition.
 
+Die Plugin stellen ein Widget zur verfügung.
+
+Nach dem Aktivieren im Theme bereich Widget, die Robust Datenbank eintragen.
+
+The plugin provide a widget.
+
+After enabling in the Theme widget area, enter the Robust database.
+
+Le plugin fournit un widget.
+
+Après avoir activé la zone de widget Thème, entrez dans la base de données Robust.
+
 ### MySQL
 Sollte sich die Webseite nicht auf dem gleichen Server befinden wie OpenSim,
 
