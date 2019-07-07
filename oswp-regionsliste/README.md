@@ -1,21 +1,9 @@
-# oswp-regionsliste
-listet alle Regionen nach Eintrag auf.
+Das Plugin ist noch nicht fertig.
+Die Konfiguration muss in die Datei oscreateavatar-widget.php eingetragen werden.
+Dort folgende Datenbank Einträge laut eurer OpenSim Konfiguration anpassen:
 
-Dieses Plugin stellt euch ein Widget zur Verfügung.
-
-Das Widget fügt sich nahtlos in euer WP Theme ein, ihr könnt auch euer Theme nachträglich wechseln.
-
-# Installation
-Entpacken und das Verzeichnis oswp-regionsliste in euer /wp-content/plugins kopieren.
-
-(Nicht das Verzeichnis oswp-regionsliste-master)
-
-Das Plugin im Plugins Bereich von Wordpress Aktivieren.
-
-Jetzt im Theme Bereich Widgets das Plugin dort hineinschieben wo ihr es hin haben wollt.
-
-Anschließend noch die MySQL Server Daten eures OpenSim eintragen und speichern anklicken.
-
-Jetzt habt ihr alle eure Regionen dort stehen wo ihr das Widget hineingeschoben habt.
-
-Durch verschieben des Widget ändert ihr die Anzeigeposition.
+      /* MySQL Database */
+      $CONF_db_server   = "localhost";		     //Your Database-Server
+      $CONF_db_user  = "databaseuser";       	             // login
+      $CONF_db_pass    = "password";     	     // password
+      $CONF_db_database   = "opensimdatabasename"; // Name of BDD

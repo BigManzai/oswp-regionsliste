@@ -15,6 +15,9 @@
 	$CONF_db_pass = $wpdb->get_var( "SELECT CONF_db_pass FROM $tablename" );
 	$CONF_db_database = $wpdb->get_var( "SELECT CONF_db_database FROM $tablename" );
 	
+	$CONF_adress = $wpdb->get_var( "SELECT CONF_adress FROM $tablename" );
+	$CONF_port = $wpdb->get_var( "SELECT CONF_port FROM $tablename" );
+	
 	$con = mysqli_connect($CONF_db_server, $CONF_db_user, $CONF_db_pass, $CONF_db_database);
 	$res = mysqli_query($con, "SELECT * FROM regions");
 	
@@ -23,15 +26,22 @@
 	
    // Tabellenbeginn
    echo "<table border='0' style='border-collapse:collapse'>";
+   
+	// Infos
+	// geht
+	// V3HG = secondlife://http|!!openmanniland.de|8002+Begin
+	// geht nicht
+	// Hop = hop://openmanniland.de:8002/Begin/92/164/23
+	// HG = secondlife://openmanniland.de:8002/Begin/92/164/23
+	// Local Grid = secondlife://Begin/92/164/23
 
    $lf = 1;
    while ($dsatz = mysqli_fetch_assoc($res))
    {
-      echo "<tr>";
-      echo "<td>$lf</td>";
-      echo "<td>" . ". "  . $dsatz["regionName"] . "</td>";
-      echo "</tr>";
-      $lf = $lf + 1;
+	  //$regionslink = "secondlife://http|!!" .  $dsatz["serverIP"] . "|8002+"  . $dsatz["regionName"];
+	  $regionslink = "secondlife://http|!!" .  $CONF_adress . "|" . $CONF_port . "+" . $dsatz["regionName"];
+	  $regionen = $dsatz["regionName"];
+	  echo "<a href='$regionslink' target='linkliste'>$regionen</a><br>";
    }
    
 
