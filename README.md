@@ -1,6 +1,6 @@
 # oswp-regionsliste
 
-Dies Plugin liest eure Datenbank aus und listet alle sich darauf befindlichen Regionen auf.
+Dies Plugin liest eure Datenbank aus und listet alle sich darauf befindlichen Regionen auf und stellt HG Links zur verfügung.
 
 Oswp was bedeutet das? OpenSimulator Wordpress um es kurz zu sagen.
 
