@@ -1,10 +1,10 @@
-# oswp-splash
+# oswp-regionsliste
 
 Das Plugin ist Konfigurierbar und listet alle Regionen des OpenSimualtors auf.
 
 Die Optik passt sich eurem Theme an.
 
-Translation hinzugefügt.
+Translation wurde hinzugefügt.
 
 ### Installation
 
