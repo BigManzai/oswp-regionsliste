@@ -1,5 +1,3 @@
-<!-- This file is used to markup the public-facing widget. -->
-
 <?php
 	global $wpdb;
 	// Fehler anzeigen
@@ -26,11 +24,10 @@
 	
    // Tabellenbeginn
    echo "<table border='0' style='border-collapse:collapse'>";
-   
-	// Infos
-	// geht
+
+	// geht:
 	// V3HG = secondlife://http|!!openmanniland.de|8002+Begin
-	// geht nicht
+	// geht nicht:
 	// Hop = hop://openmanniland.de:8002/Begin/92/164/23
 	// HG = secondlife://openmanniland.de:8002/Begin/92/164/23
 	// Local Grid = secondlife://Begin/92/164/23
@@ -38,13 +35,11 @@
    $lf = 1;
    while ($dsatz = mysqli_fetch_assoc($res))
    {
-	  //$regionslink = "secondlife://http|!!" .  $dsatz["serverIP"] . "|8002+"  . $dsatz["regionName"];
 	  $regionslink = "secondlife://http|!!" .  $CONF_adress . "|" . $CONF_port . "+" . $dsatz["regionName"];
 	  $regionen = $dsatz["regionName"];
 	  echo "<a href='$regionslink' target='linkliste'>$regionen</a><br>";
    }
    
-
    // Tabellenende
    echo "</table>";
 

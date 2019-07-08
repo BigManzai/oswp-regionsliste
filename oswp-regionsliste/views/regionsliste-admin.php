@@ -15,11 +15,10 @@
 	$CONF_os_name = "Sim List";
 	$CONF_db_server = "127.0.0.1";
 	$CONF_port = "8002";
-	$CONF_callparameter = "secondlife://http|!!";
+	//$CONF_callparameter = "secondlife://http|!!";
 ?>
 
 <?php if (!isset($_POST['oskonfig'])): ?>
-
 
 <!-- Start Abfrage Nutzer -->
 <form class="w3-container" action="" method="post">
@@ -67,15 +66,6 @@
         </div>
     </div>
 	
-	<?php echo esc_html__( '  HG Link setting', 'oswp-regionsliste' ) ; ?>
-	
-		 	<div class="w3-row w3-section">
-    <p><label for="base" class="w3-label control-label"><i class="fa fa-pencil" style="font-size:24px"></i><?php echo esc_html__( '  call parameters HG Link:', 'oswp-regionsliste' ) ; ?></b></label></p>
-        <div class="w3-row">
-            <p><input class="w3-input w3-border" type="text" value="secondlife://http|!!" name="CONF_callparameter"/></p>
-        </div>
-    </div>
-	
 	<div class="w3-row w3-section">
     <p><label for="base" class="w3-label control-label"><i class="fa fa-pencil" style="font-size:24px"></i><?php echo esc_html__( '  IP or adress HG Link:', 'oswp-regionsliste' ) ; ?></b></label></p>
         <div class="w3-row">
@@ -97,8 +87,6 @@
 	if (isset($_POST['oskonfig']) AND $_POST['oskonfig'] == 1)
 	{
 		// wir schaffen unsere Variablen
-		//$CONF_os_name, $CONF_db_server, $CONF_db_user, $CONF_db_pass, $CONF_db_database 
-
 		$CONF_os_name  = $_POST['CONF_os_name']; //variable name, string value use: %s
 		$CONF_db_server  = $_POST['CONF_db_server']; //server http or IP, string value use: %s
 		$CONF_db_user  = $_POST['CONF_db_user']; //database user name, string value use: %s
@@ -107,7 +95,8 @@
 		
 		$CONF_adress  = $_POST['CONF_adress']; //database name, string value use: %s
 		$CONF_port  = $_POST['CONF_port']; //database name, string value use: %s
-		$CONF_callparameter  = $_POST['CONF_callparameter']; //database name, string value use: %s
+		//$CONF_callparameter  = $_POST['CONF_callparameter']; //database name, string value use: %s
+		$CONF_callparameter = "secondlife://http|!!";
 		
 		global $wpdb;
 		// Fehler anzeigen
@@ -140,8 +129,7 @@
 		$wpdb->delete( $tablename, array( 'os_id' => 0 ) );
 		
 		// Eigentliche Daten speichern
-		$sql2 = $wpdb->prepare("INSERT INTO $tablename (CONF_os_name, CONF_db_server, CONF_db_user, CONF_db_pass, CONF_db_database, CONF_adress, CONF_port, CONF_callparameter) values (%s, %s, %s, %s, %s, %s, %s, %s)", $CONF_os_name, $CONF_db_server, $CONF_db_user, $CONF_db_pass, $CONF_db_database, $CONF_adress, $CONF_port, $CONF_callparameter);
-		dbDelta( $sql2 );
+		$sqlx2 = $wpdb->prepare("INSERT INTO $tablename (CONF_os_name, CONF_db_server, CONF_db_user, CONF_db_pass, CONF_db_database, CONF_adress, CONF_port, CONF_callparameter) values (%s, %s, %s, %s, %s, %s, %s, %s)", $CONF_os_name, $CONF_db_server, $CONF_db_user, $CONF_db_pass, $CONF_db_database, $CONF_adress, $CONF_port, $CONF_callparameter);
+		dbDelta( $sqlx2 );
 	}
-
 ?>
