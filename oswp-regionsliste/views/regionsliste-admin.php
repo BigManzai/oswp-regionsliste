@@ -89,13 +89,22 @@
 		// wir schaffen unsere Variablen
 		$CONF_os_name  = $_POST['CONF_os_name']; //variable name, string value use: %s
 		$CONF_db_server  = $_POST['CONF_db_server']; //server http or IP, string value use: %s
-		$CONF_db_user  = $_POST['CONF_db_user']; //database user name, string value use: %s
-		$CONF_db_pass  = $_POST['CONF_db_pass']; //database password, string value use: %s
-		$CONF_db_database  = $_POST['CONF_db_database']; //database name, string value use: %s
+//Neu mit einer einfachen Verschlüsselngsmethode
+		$CONF_db_user_crypt  = $_POST['CONF_db_user']; //database user name, string value use: %s
+		$CONF_db_pass_crypt  = $_POST['CONF_db_pass']; //database password, string value use: %s
+		$CONF_db_database_crypt  = $_POST['CONF_db_database']; //database name, string value use: %s
+		
+		//Einfache Verschlüsselngsmethode
+		include("blowfish.class.php");
+		$blowfish = new Blowfish("WJF8CJc22fECXvm2D4Yja7HH");
+		
+		$CONF_db_user 		= $blowfish->Encrypt( $CONF_db_user_crypt );
+		$CONF_db_pass 		= $blowfish->Encrypt( $CONF_db_pass_crypt );
+		$CONF_db_database 	= $blowfish->Encrypt( $CONF_db_database_crypt );
+//Neu mit einer einfachen Verschlüsselngsmethode		
 		
 		$CONF_adress  = $_POST['CONF_adress']; //database name, string value use: %s
 		$CONF_port  = $_POST['CONF_port']; //database name, string value use: %s
-		//$CONF_callparameter  = $_POST['CONF_callparameter']; //database name, string value use: %s
 		$CONF_callparameter = "secondlife://http|!!";
 		
 		global $wpdb;
