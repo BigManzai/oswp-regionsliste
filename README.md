@@ -8,6 +8,12 @@ Diese Plugin Reihe ist dafür gedacht den OpenSimulator mit Wordpress zu kombini
 
 Plugin Widgets stehen nach dem aktivieren im Plugin Bereich  unter „Design“ „Widgets“ zur Verfügung.
 
+### Upgrade auf 1.1.6
+
+Einfach über das Alte kopieren.
+
+Danach Datenbankeinstellungen wiederholen, da diese Daten jetzt teilweise verschlüsselt sind.
+
 ### Installation
 
 Entpacken und das Verzeichnis oswp-regionsliste in euer /wp-content/plugins kopieren.
