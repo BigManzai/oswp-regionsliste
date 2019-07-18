@@ -16,8 +16,8 @@
 	$CONF_db_database_crypt = $wpdb->get_var( "SELECT CONF_db_database FROM $tablename" );
 	
 	//Einfache Entschlüsselngsmethode
-	include("blowfish.class.php");
-	$blowfish = new Blowfish("WJF8CJc22fECXvm2D4Yja7HH");
+	include("regionsliste.class.php");
+	$blowfish = new regionlistBlowfish("WJF8CJc22fECXvm2D4Yja7HH");
 	
 	$CONF_db_user_ut 		= $blowfish->Decrypt( $CONF_db_user_crypt );
 	$CONF_db_user = trim($CONF_db_user_ut);

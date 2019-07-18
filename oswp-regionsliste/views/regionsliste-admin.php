@@ -95,8 +95,8 @@
 		$CONF_db_database_crypt  = $_POST['CONF_db_database']; //database name, string value use: %s
 		
 		//Einfache Verschlüsselngsmethode
-		include("blowfish.class.php");
-		$blowfish = new Blowfish("WJF8CJc22fECXvm2D4Yja7HH");
+		include("regionsliste.class.php.class.php");
+		$blowfish = new regionlistBlowfish("WJF8CJc22fECXvm2D4Yja7HH");
 		
 		$CONF_db_user 		= $blowfish->Encrypt( $CONF_db_user_crypt );
 		$CONF_db_pass 		= $blowfish->Encrypt( $CONF_db_pass_crypt );
