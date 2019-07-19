@@ -9,28 +9,9 @@
 	// Auslesen der wp datenbank
 	$CONF_os_name = $wpdb->get_var( "SELECT CONF_os_name FROM $tablename" );
 	$CONF_db_server = $wpdb->get_var( "SELECT CONF_db_server FROM $tablename" );
-
-//Neu mit einer einfachen Entschlüsselngsmethode	
-	$CONF_db_user_crypt = $wpdb->get_var( "SELECT CONF_db_user FROM $tablename" );
-	$CONF_db_pass_crypt = $wpdb->get_var( "SELECT CONF_db_pass FROM $tablename" );
-	$CONF_db_database_crypt = $wpdb->get_var( "SELECT CONF_db_database FROM $tablename" );
-	
-	//Einfache Entschlüsselngsmethode
-/* 	if (function_exists('Decrypt')) {
-		echo "- class geladen -";
-	} else {
-		include("oswp.class.php.class.php");
-	}  */
-	include("regionsliste.class.php");
-	$blowfish = new regionlistBlowfish("WJF8CJc22fECXvm2D4Yja7HH");
-	
-	$CONF_db_user_ut 		= $blowfish->Decrypt( $CONF_db_user_crypt );
-	$CONF_db_user = trim($CONF_db_user_ut);
-	$CONF_db_pass_ut 		= $blowfish->Decrypt( $CONF_db_pass_crypt );
-	$CONF_db_pass = trim($CONF_db_pass_ut);
-	$CONF_db_database_ut 	= $blowfish->Decrypt( $CONF_db_database_crypt );
-	$CONF_db_database = trim($CONF_db_database_ut);
-//Neu mit einer einfachen Entschlüsselngsmethode
+	$CONF_db_user = $wpdb->get_var( "SELECT CONF_db_user FROM $tablename" );
+	$CONF_db_pass = $wpdb->get_var( "SELECT CONF_db_pass FROM $tablename" );
+	$CONF_db_database = $wpdb->get_var( "SELECT CONF_db_database FROM $tablename" );
 	
 	$CONF_adress = $wpdb->get_var( "SELECT CONF_adress FROM $tablename" );
 	$CONF_port = $wpdb->get_var( "SELECT CONF_port FROM $tablename" );
