@@ -12,17 +12,17 @@
  
  <?php
 	// Standardwerte setzen
-	$CONF_os_name = "Sim List";
-	$CONF_db_server = "127.0.0.1";
-	$CONF_port = "8002";
+	$CONF_os_name_rl = "Regionsliste";
+	$CONF_db_server_rl = "127.0.0.1";
+	$CONF_port_rl = "8002";
 	//$CONF_callparameter = "secondlife://http|!!";
 ?>
 
-<?php if (!isset($_POST['oskonfig'])): ?>
+<?php if (!isset($_POST['rlconfig'])): ?>
 
 <!-- Start Abfrage Nutzer -->
 <form class="container" action="" method="post">
-    <input type="hidden" name="oskonfig" value="1" />
+    <input type="hidden" name="rlconfig" value="1" />
 		
 <!-- OpenSim Einstellung --> 
 <!-- $CONF_os_name, $CONF_db_server, $CONF_db_user, $CONF_db_pass, $CONF_db_database -->
@@ -31,7 +31,7 @@
 
     <p><label for="base" class="label control-label"><i class="dashicons dashicons-book" style="font-size:24px"></i><?php echo esc_html__( '  Heading Widget Name:', 'oswp-regionsliste' ) ; ?></b></label></p>
         <div class="row">
-            <p><input class="input border" type="text" value="Sim List" name="CONF_os_name"/></p>
+            <p><input class="input border" type="text" value="Sim List" name="CONF_os_name_rl"/></p>
         </div>
     </div>
 	
@@ -40,21 +40,21 @@
 	<div class="row section">	
     <p><label for="base" class="label control-label"><i class="dashicons dashicons-book" style="font-size:24px"></i><?php echo esc_html__( '  MySQL Server IP:', 'oswp-regionsliste' ) ; ?></b></label></p>
         <div class="row">
-            <p><input class="input border" type="text" value="127.0.0.1" name="CONF_db_server"/></p>
+            <p><input class="input border" type="text" value="127.0.0.1" name="CONF_db_server_rl"/></p>
         </div>
     </div>
  
 	<div class="row section">
     <p><label for="base" class="label control-label"><i class="dashicons dashicons-book" style="font-size:24px"></i><?php echo esc_html__( '  MySQL Database:', 'oswp-regionsliste' ) ; ?></b></label></p>
         <div class="row">
-            <p><input class="input border" type="text" placeholder="opensim" name="CONF_db_database"/></p>
+            <p><input class="input border" type="text" placeholder="opensim" name="CONF_db_database_rl"/></p>
         </div>
     </div>
 
  	<div class="row section">
     <p><label for="base" class="label control-label"><i class="dashicons dashicons-book" style="font-size:24px"></i><?php echo esc_html__( '  MySQL User:', 'oswp-regionsliste' ) ; ?></b></label></p>
         <div class="row">
-            <p><input class="input border" type="text" placeholder="opensim" name="CONF_db_user"/></p>
+            <p><input class="input border" type="text" placeholder="opensim" name="CONF_db_user_rl"/></p>
         </div>
     </div>
 
@@ -62,21 +62,21 @@
  	<div class="row section">
     <p><label for="base" class="label control-label"><i class="dashicons dashicons-book" style="font-size:24px"></i><?php echo esc_html__( '  MySQL Password:', 'oswp-regionsliste' ) ; ?></b></label></p>
         <div class="row">
-            <p><input class="input border" type="password" placeholder="password" name="CONF_db_pass"/></p>
+            <p><input class="input border" type="password" placeholder="password" name="CONF_db_pass_rl"/></p>
         </div>
     </div>
 	
 	<div class="row section">
     <p><label for="base" class="label control-label"><i class="dashicons dashicons-book" style="font-size:24px"></i><?php echo esc_html__( '  IP or adress HG Link:', 'oswp-regionsliste' ) ; ?></b></label></p>
         <div class="row">
-            <p><input class="input border" type="text" placeholder="myGrid.com" name="CONF_adress"/></p>
+            <p><input class="input border" type="text" placeholder="myGrid.com" name="CONF_adress_rl"/></p>
         </div>
     </div>
 
  	<div class="row section">
     <p><label for="base" class="label control-label"><i class="dashicons dashicons-book" style="font-size:24px"></i><?php echo esc_html__( '  Port HG Link:', 'oswp-regionsliste' ) ; ?></b></label></p>
         <div class="row">
-            <p><input class="input border" type="text" value="8002" name="CONF_port"/></p>
+            <p><input class="input border" type="text" value="8002" name="CONF_port_rl"/></p>
         </div>
     </div>
 	
@@ -84,28 +84,36 @@
 
 <?php
 //print_r($_POST);
-	if (isset($_POST['oskonfig']) AND $_POST['oskonfig'] == 1)
+	if (isset($_POST['rlconfig']) AND $_POST['rlconfig'] == 1)
 	{
 		// wir schaffen unsere Variablen
-		$CONF_os_name  = $_POST['CONF_os_name']; //variable name, string value use: %s
-		$CONF_db_server  = $_POST['CONF_db_server']; //server http or IP, string value use: %s
-//Neu mit einer einfachen Verschlüsselngsmethode
-		$CONF_db_user_crypt  = $_POST['CONF_db_user']; //database user name, string value use: %s
-		$CONF_db_pass_crypt  = $_POST['CONF_db_pass']; //database password, string value use: %s
-		$CONF_db_database_crypt  = $_POST['CONF_db_database']; //database name, string value use: %s
+		$CONF_os_name_rl  = $_POST['CONF_os_name_rl']; //variable name, string value use: %s
+		$CONF_db_server_rl  = $_POST['CONF_db_server_rl']; //server http or IP, string value use: %s
+		
+		//Neu mit einer einfachen Verschlüsselngsmethode
+		$CONF_db_user_crypt_rl = $_POST['CONF_db_user_rl']; //database user name, string value use: %s
+		$CONF_db_pass_crypt_rl = $_POST['CONF_db_pass_rl']; //database password, string value use: %s
+		$CONF_db_database_crypt_rl = $_POST['CONF_db_database_rl']; //database name, string value use: %s
 		
 		//Einfache Verschlüsselngsmethode
-		include("regionsliste.class.php.class.php");
-		$blowfish = new regionlistBlowfish("WJF8CJc22fECXvm2D4Yja7HH");
+ 
+		if (function_exists('Encrypt')) {
+			echo "- class geladen -";
+		} else {
+			include("oswp.class.php.class.php");
+		} 
+
+		//include("regionsliste.class.php.class.php");
+		$blowfish_rl = new regionlistBlowfish("WJF8CJc22fECXvm2D4Yja7HH");
 		
-		$CONF_db_user 		= $blowfish->Encrypt( $CONF_db_user_crypt );
-		$CONF_db_pass 		= $blowfish->Encrypt( $CONF_db_pass_crypt );
-		$CONF_db_database 	= $blowfish->Encrypt( $CONF_db_database_crypt );
-//Neu mit einer einfachen Verschlüsselngsmethode		
+		$CONF_db_user_rl = $blowfish_rl->Encrypt( $CONF_db_user_crypt_rl );
+		$CONF_db_pass_rl = $blowfish_rl->Encrypt( $CONF_db_pass_crypt_rl );
+		$CONF_db_database_rl = $blowfish_rl->Encrypt( $CONF_db_database_crypt_rl );
+		//Neu mit einer einfachen Verschlüsselngsmethode		
 		
-		$CONF_adress  = $_POST['CONF_adress']; //database name, string value use: %s
-		$CONF_port  = $_POST['CONF_port']; //database name, string value use: %s
-		$CONF_callparameter = "secondlife://http|!!";
+		$CONF_adress_rl = $_POST['CONF_adress']; //database name, string value use: %s
+		$CONF_port_rl = $_POST['CONF_port']; //database name, string value use: %s
+		//$CONF_callparameter = "secondlife://http|!!";
 		
 		global $wpdb;
 		// Fehler anzeigen
@@ -120,14 +128,13 @@
 		// Neue Tabelleneinträge eintragen NEU: os_id mediumint (9) NOT NULL,
 		$sqlx = "CREATE TABLE $tablename (
 		  os_id mediumint (9) NOT NULL,
-		  CONF_os_name text NOT NULL,
-		  CONF_db_server text NOT NULL,
-		  CONF_db_user text NOT NULL,
-		  CONF_db_pass text NOT NULL,
-		  CONF_db_database text NOT NULL,
-		  CONF_adress text NOT NULL,
-		  CONF_port text NOT NULL,
-		  CONF_callparameter text NOT NULL,
+		  CONF_os_name_rl text NOT NULL,
+		  CONF_db_server_rl text NOT NULL,
+		  CONF_db_user_rl text NOT NULL,
+		  CONF_db_pass_rl text NOT NULL,
+		  CONF_db_database_rl text NOT NULL,
+		  CONF_adress_rl text NOT NULL,
+		  CONF_port_rl text NOT NULL,
 		  PRIMARY KEY  (os_id)
 		) $charset_collate;";
 
@@ -138,7 +145,7 @@
 		$wpdb->delete( $tablename, array( 'os_id' => 0 ) );
 		
 		// Eigentliche Daten speichern
-		$sqlx2 = $wpdb->prepare("INSERT INTO $tablename (CONF_os_name, CONF_db_server, CONF_db_user, CONF_db_pass, CONF_db_database, CONF_adress, CONF_port, CONF_callparameter) values (%s, %s, %s, %s, %s, %s, %s, %s)", $CONF_os_name, $CONF_db_server, $CONF_db_user, $CONF_db_pass, $CONF_db_database, $CONF_adress, $CONF_port, $CONF_callparameter);
+		$sqlx2 = $wpdb->prepare("INSERT INTO $tablename (CONF_os_name_rl, CONF_db_server_rl, CONF_db_user_rl, CONF_db_pass_rl, CONF_db_database_rl, CONF_adress_rl, CONF_port_rl) values (%s, %s, %s, %s, %s, %s, %s)", $CONF_os_name_rl, $CONF_db_server_rl, $CONF_db_user_rl, $CONF_db_pass_rl, $CONF_db_database_rl, $CONF_adress_rl, $CONF_port_rl);
 		dbDelta( $sqlx2 );
 	}
 ?>

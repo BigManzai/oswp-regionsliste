@@ -16,6 +16,11 @@
 	$CONF_db_database_crypt = $wpdb->get_var( "SELECT CONF_db_database FROM $tablename" );
 	
 	//Einfache Entschlüsselngsmethode
+/* 	if (function_exists('Decrypt')) {
+		echo "- class geladen -";
+	} else {
+		include("oswp.class.php.class.php");
+	}  */
 	include("regionsliste.class.php");
 	$blowfish = new regionlistBlowfish("WJF8CJc22fECXvm2D4Yja7HH");
 	
