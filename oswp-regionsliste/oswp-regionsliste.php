@@ -14,7 +14,7 @@
  * Plugin Name:       oswp-regionsliste
  * Plugin URI:        https://github.com/BigManzai/oswp-regionsliste
  * Description:       The OpenSim plugin/widget displays the current region list. Please activate in the widget area and enter the MySQL data of the database.
- * Version:           1.1.6
+ * Version:           1.2.0
  * Author:            Manfred Aabye
  * Author URI:        http://openmanniland.de
  * Text Domain:       oswp-regionsliste
@@ -29,24 +29,10 @@ if ( ! defined ( 'ABSPATH' ) ) {
 	exit;
 }
 
-//Load our translation files.
-	$wpterm_locale = array( 'de_DE' );
-	$this_locale = 'de_DE';
-	//$wpterm_locale = array( 'fr_FR' );
-	//$this_locale = 'fr_FR';
-	//$wpterm_locale = array( 'es_ES' );
-	//$this_locale = 'es_ES';
-	//$wpterm_locale = array( 'ru_RU' );
-	//$this_locale = 'ru_RU';
-
-
-//$this_locale = get_locale();
-if ( in_array( $this_locale, $wpterm_locale ) ) {
-	if ( file_exists( __DIR__ . "/lang/oswp-regionsliste-{$this_locale}.mo" ) ) {
-		unload_textdomain( 'oswp-regionsliste' );
-		load_textdomain( 'oswp-regionsliste', __DIR__ . "/lang/oswp-regionsliste-{$this_locale}.mo" );
-	}
-}
+/**
+ * Gettext.
+ */
+load_plugin_textdomain( 'oswp-regionsliste', false, basename( dirname( __FILE__ ) ) . '/lang' );
 
 // TODO: change 'oswp_regionsliste' to the name of your plugin
 class oswp_regionsliste extends WP_Widget {
