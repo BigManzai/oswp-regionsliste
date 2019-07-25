@@ -90,14 +90,32 @@
 		$CONF_os_name  = $_POST['CONF_os_name']; //variable name, string value use: %s
 		$CONF_db_server  = $_POST['CONF_db_server']; //server http or IP, string value use: %s
 		
-		$CONF_db_user  = $_POST['CONF_db_user']; //database user name, string value use: %s
+/* 		$CONF_db_user  = $_POST['CONF_db_user']; //database user name, string value use: %s
 		$CONF_db_pass  = $_POST['CONF_db_pass']; //database password, string value use: %s
-		$CONF_db_database  = $_POST['CONF_db_database']; //database name, string value use: %s
+		$CONF_db_database  = $_POST['CONF_db_database']; //database name, string value use: %s */
 		
 		$CONF_adress  = $_POST['CONF_adress']; //database name, string value use: %s
 		$CONF_port  = $_POST['CONF_port']; //database name, string value use: %s
-		//$CONF_callparameter  = $_POST['CONF_callparameter']; //database name, string value use: %s
 		$CONF_callparameter = "secondlife://http|!!";
+		
+//Neu mit einer einfachen Verschlüsselngsmethode
+		$CONF_db_user_crypt_ul  = $_POST['CONF_db_user']; //database user name, string value use: %s
+		$CONF_db_pass_crypt_ul  = $_POST['CONF_db_pass']; //database password, string value use: %s
+		$CONF_db_database_crypt_ul  = $_POST['CONF_db_database']; //database name, string value use: %s
+		
+		// Schauen ob blowfish.class.php schon geladen ist.
+		if (class_exists('Blowfish')) {
+			echo""; // blowfish.class.php ist schon geladen.
+		} else {
+			include("blowfish.class.php");// blowfish.class.php nachladen.
+		}
+		
+		$blowfish = new Blowfish("BY29K6CUaV5ixsNgA5URMH2s");
+		
+		$CONF_db_user 		= $blowfish->Encrypt( $CONF_db_user_crypt_ul );
+		$CONF_db_pass 		= $blowfish->Encrypt( $CONF_db_pass_crypt_ul );
+		$CONF_db_database 	= $blowfish->Encrypt( $CONF_db_database_crypt_ul );
+//Neu mit einer einfachen Verschlüsselngsmethode
 		
 		global $wpdb;
 		// Fehler anzeigen
